@@ -1,11 +1,27 @@
 // Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 
 import {css} from 'emotion';
-import React, {useCallback} from 'react';
-import {IState, useMappedState} from './Store';
+import React, { useCallback } from 'react';
+// import React, { useContext } from 'react';
+// import { StoreContext } from './Store';
+import {IState, useMappedState } from './Store';
 import TodoItem from './TodoItem';
 
 export default function TodoList() {
+  const render = 'render';
+  console.log(render);
+  // const store = useContext(StoreContext);
+  // const state = store && store.getState();
+
+  // let todoCount = 0;
+  // let lastUpdated = 0;
+  // if (state) {
+
+  //   lastUpdated = state.lastUpdated;
+  //   var { todos } = state;
+  //   todoCount = todos.length;
+  // }
+
   const {lastUpdated, todoCount} = useMappedState(
     useCallback(
       (state: IState) => ({
